@@ -10,8 +10,8 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 chsh -s /bin/zsh
 mkdir -p /root/speedtest && tar -xvf -C /root/speedtest speedtest.tgz
 mkdir -p /root/.config/neofetch
-curl -fSL https:// > /root/.zshrc
-curl -fSL https:// > /root/.config/neofetch/config.conf
+curl -fSL https://raw.githubusercontent.com/Konata09/VPSScript/master/zsh.zshrc > /root/.zshrc
+curl -fSL https://raw.githubusercontent.com/Konata09/VPSScript/master/neo.conf > /root/.config/neofetch/config.conf
 wget https://cdn.ipip.net/17mon/besttrace4linux.zip
 unzip -d besttrace besttrace4linux.zip
 chmod +x besttrace/besttrace
