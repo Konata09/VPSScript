@@ -19,9 +19,10 @@ curl -fSL https://raw.githubusercontent.com/Konata09/VPSScript/master/zsh.zshrc 
 chsh -s /bin/zsh
 
 # install speedtest
-curl -fSL -O speedtest.tgz https://install.speedtest.net/app/cli/ookla-speedtest-1.0.0-x86_64-linux.tgz
-mkdir -p /opt/speedtest && tar -xvf -C /opt/speedtest speedtest.tgz
-rm speedtest.tgz
+mkdir -p /opt/speedtest && cd /opt/speedtest
+wget https://install.speedtest.net/app/cli/ookla-speedtest-1.0.0-x86_64-linux.tgz
+tar -xvf ookla-speedtest-1.0.0-x86_64-linux.tgz
+rm ookla-speedtest-1.0.0-x86_64-linux.tgz
 
 # copy neofetch configuration
 mkdir -p /root/.config/neofetch
