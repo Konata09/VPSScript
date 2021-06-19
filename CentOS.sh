@@ -3,7 +3,7 @@ cd /root
 yum update && yum -y install dnf dnf-plugins-core
 dnf -y copr enable konimex/neofetch
 dnf -y update
-dnf -y install unzip vim git curl wget net-tools zsh make gcc neofetch
+dnf -y install unzip vim git curl wget net-tools zsh make gcc iperf3 neofetch
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 mkdir -p /root/.ssh
 echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDJdb7V3GdgfQ6QIUTXiowt/oCgEtiLNeywDUXVHQnfx4UUItBrcnOF1VsFXuNSEJ6efifcJnT46miOHZJkWOM3PhN+WjauM6TPnAVi2fipObBmeMyTIvX5BP0MRsaq3WaUpYCLvwtwDUMsuF1pnPsuK/mUL7vptDCJPKfU7clknv8xwYdllEoSXwWgPHWJxtlw2Gbnk4+ayMGbOaR7FDkjAazByqHHg8CICTZCEd+/yd3VflX9IDHhKRFmW7/i2VdbRGYTPpOE+EdqRAiiGL1ZDNTzpSNe2YTUqEIaKk9U277As/JIqtl7+Us/ephfA3JD7jywDSjnxTLOqGnGevaqH5sCuo53j1DiluW1BCEjszPlH24YxstQN9GlVeOjZ+OhFaSDuyq048MbcYEO2lWwKmkz0cXkfzBfDWHlxe+CBur6UJkhXTHHdTFST1/hESPYfkxysYL+kOCvIAEWYnOQLKPuYYtlBlyDjf63xgHyryU+falENkdW1+IAHd7SBb8= konata@MacBook-Pro.local" >> /root/.ssh/authorized_keys
