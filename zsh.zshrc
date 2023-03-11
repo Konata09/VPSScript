@@ -82,6 +82,7 @@ plugins=(git
 
 source $ZSH/oh-my-zsh.sh
 
+[[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"

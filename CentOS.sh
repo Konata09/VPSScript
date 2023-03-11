@@ -1,15 +1,15 @@
-#/bin/bash
+#!/bin/bash
+
 yum update && yum -y install dnf dnf-plugins-core
 dnf -y copr enable konimex/neofetch
 dnf -y update
-dnf -y install unzip vim git curl wget net-tools zsh ncurses-devel automake autoconf make gcc iperf3 neofetch
+dnf -y install unzip vim git curl wget net-tools zsh ncurses-devel automake autoconf make gcc iperf3 neofetch grc
 
 # add ssh keys
 mkdir -p ~/.ssh && chmod 700 ~/.ssh
 touch ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
 echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDJdb7V3GdgfQ6QIUTXiowt/oCgEtiLNeywDUXVHQnfx4UUItBrcnOF1VsFXuNSEJ6efifcJnT46miOHZJkWOM3PhN+WjauM6TPnAVi2fipObBmeMyTIvX5BP0MRsaq3WaUpYCLvwtwDUMsuF1pnPsuK/mUL7vptDCJPKfU7clknv8xwYdllEoSXwWgPHWJxtlw2Gbnk4+ayMGbOaR7FDkjAazByqHHg8CICTZCEd+/yd3VflX9IDHhKRFmW7/i2VdbRGYTPpOE+EdqRAiiGL1ZDNTzpSNe2YTUqEIaKk9U277As/JIqtl7+Us/ephfA3JD7jywDSjnxTLOqGnGevaqH5sCuo53j1DiluW1BCEjszPlH24YxstQN9GlVeOjZ+OhFaSDuyq048MbcYEO2lWwKmkz0cXkfzBfDWHlxe+CBur6UJkhXTHHdTFST1/hESPYfkxysYL+kOCvIAEWYnOQLKPuYYtlBlyDjf63xgHyryU+falENkdW1+IAHd7SBb8= konata@MacBook-Pro.local" >> ~/.ssh/authorized_keys
-echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDOAkGFOAW3zBNRwtcdZMcN2AM5xYaKWlSTmZMHizza8aES3R/XlhH+SUe6QCCSakxcvAfxs9HSRkQ5IZGQwcl7AuK+WRpxido9zAR3H+XhcW+zIW+vs9cuDPIAE6WtH2/cmPRSPuX2cu0ujc+d6F2fh81S4U9Kgvt5PJiwwjLh1EqeFP9Ler4/8qIvF4YrUYUt+D0gGbhfAxp+Ysd9Dze6cmCldHqHVt2d7dHyMO8ZfyACugZqTELqH3fJNcaM5UPKo5RCsEDasKudb81m8ul4tHwUEoGYiJfXmDz7KYBIx5w4uGeTgmrVL65W9aAwdOX76Fyxe+PCKHFyRNAhbcJq3lYXLWm2fnji7IFusjp/ofpDRWqjaoquLZVvteuMJr9p6ThEC79avfJKwRu1hkEqtsvG1t8DKUW6rgurvrG0X4CSJ9mo1vjwGanoxGCgjLJd1WZbZDIizQcJmsnHydToe9P2DxcSCnbggGa2QbFSeGwsFoqlmvoxqU9ZvXGRkbk= konata@SUZUMIYAHARUHI" >> ~/.ssh/authorized_keys
 
 # install oh-my-zsh
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
