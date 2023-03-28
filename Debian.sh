@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apt update && apt install -y unzip htop vim git curl wget net-tools  zsh libncursesw5-dev autotools-dev autoconf build-essential iperf3 neofetch grc
+apt update && apt install -y unzip htop vim git curl wget net-tools ca-certificates openssl zsh libncursesw5-dev autotools-dev autoconf build-essential iperf3 neofetch grc
 
 # add ssh keys
 mkdir -p ~/.ssh && chmod 700 ~/.ssh
