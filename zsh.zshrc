@@ -107,3 +107,4 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
+RPROMPT='%{$fg[yellow]%} [%D{%H:%M:%S}] '$RPROMPT
