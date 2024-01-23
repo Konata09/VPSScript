@@ -79,7 +79,7 @@ plugins=(git
     command-not-found
     systemd
 )
-
+DISABLE_AUTO_UPDATE="true"
 source $ZSH/oh-my-zsh.sh
 
 [[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
