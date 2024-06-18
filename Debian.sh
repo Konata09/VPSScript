@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apt update && apt install -y unzip htop vim git curl wget net-tools ca-certificates openssl zsh libncursesw5-dev autotools-dev autoconf build-essential iperf3 neofetch grc
+apt update && apt install -y unzip htop vim git curl wget net-tools ca-certificates openssl zsh libncursesw5-dev autotools-dev autoconf build-essential iperf3 neofetch grc gnupg2 lsb-release debian-archive-keyring
 
 # add ssh keys
 mkdir -p ~/.ssh && chmod 700 ~/.ssh
@@ -26,6 +26,20 @@ rm ookla-speedtest-1.0.0-x86_64-linux.tgz
 # copy neofetch configuration
 mkdir -p /root/.config/neofetch
 curl -fSL https://raw.githubusercontent.com/Konata09/VPSScript/master/neo.conf > /root/.config/neofetch/config.conf
+
+# install nginx
+curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor | sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg >/dev/null
+gpg --dry-run --quiet --no-keyring --import --import-options import-show /usr/share/keyrings/nginx-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] http://nginx.org/packages/mainline/debian `lsb_release -cs` nginx" | sudo tee /etc/apt/sources.list.d/nginx.list
+echo -e "Package: *\nPin: origin nginx.org\nPin: release o=nginx\nPin-Priority: 900\n" | sudo tee /etc/apt/preferences.d/99nginx
+apt update
+apt install nginx
+
+# install zabbix agent
+wget https://repo.zabbix.com/zabbix/7.0/debian/pool/main/z/zabbix-release/zabbix-release_7.0-1+debian12_all.deb
+dpkg -i zabbix-release_7.0-1+debian12_all.deb
+apt update
+apt install zabbix-agent2
 
 # install golang
 wget https://golang.org/dl/go1.16.3.linux-amd64.tar.gz
