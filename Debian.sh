@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apt update && apt install -y unzip htop vim git curl wget net-tools ca-certificates openssl zsh libncursesw5-dev autotools-dev autoconf build-essential iperf3 neofetch grc gnupg2 lsb-release debian-archive-keyring
+apt update && apt install -y unzip htop vim git curl wget net-tools ca-certificates openssl zsh libncursesw5-dev autotools-dev autoconf build-essential iperf3 neofetch grc gnupg2 lsb-release debian-archive-keyring socat
 
 # add ssh keys
 mkdir -p ~/.ssh && chmod 700 ~/.ssh
@@ -42,6 +42,9 @@ dpkg -i zabbix-release_7.0-1+debian12_all.deb
 apt update
 apt install zabbix-agent2
 rm zabbix-release_7.0-1+debian12_all.deb
+
+# install acme.sh
+curl https://get.acme.sh | sh -s email=abuse@bronya.moe
 
 # install golang
 wget https://golang.org/dl/go1.16.3.linux-amd64.tar.gz
