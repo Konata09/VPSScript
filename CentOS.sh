@@ -1,15 +1,14 @@
 #!/bin/bash
 
 yum update && yum -y install dnf dnf-plugins-core
-dnf -y copr enable konimex/neofetch
 dnf -y update
-dnf -y install unzip vim git curl wget net-tools zsh ncurses-devel automake autoconf make gcc iperf3 neofetch grc
+dnf -y install unzip vim git curl wget net-tools zsh ncurses-devel automake autoconf make gcc iperf3 grc
 
 # add ssh keys
 mkdir -p ~/.ssh && chmod 700 ~/.ssh
 touch ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
-echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDJdb7V3GdgfQ6QIUTXiowt/oCgEtiLNeywDUXVHQnfx4UUItBrcnOF1VsFXuNSEJ6efifcJnT46miOHZJkWOM3PhN+WjauM6TPnAVi2fipObBmeMyTIvX5BP0MRsaq3WaUpYCLvwtwDUMsuF1pnPsuK/mUL7vptDCJPKfU7clknv8xwYdllEoSXwWgPHWJxtlw2Gbnk4+ayMGbOaR7FDkjAazByqHHg8CICTZCEd+/yd3VflX9IDHhKRFmW7/i2VdbRGYTPpOE+EdqRAiiGL1ZDNTzpSNe2YTUqEIaKk9U277As/JIqtl7+Us/ephfA3JD7jywDSjnxTLOqGnGevaqH5sCuo53j1DiluW1BCEjszPlH24YxstQN9GlVeOjZ+OhFaSDuyq048MbcYEO2lWwKmkz0cXkfzBfDWHlxe+CBur6UJkhXTHHdTFST1/hESPYfkxysYL+kOCvIAEWYnOQLKPuYYtlBlyDjf63xgHyryU+falENkdW1+IAHd7SBb8= konata@MacBook-Pro.local" >> ~/.ssh/authorized_keys
+curl -fSL https://raw.githubusercontent.com/Konata09/VPSScript/master/ssh_public_keys >> ~/.ssh/authorized_keys
 
 # install oh-my-zsh
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
@@ -20,15 +19,14 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 curl -fSL https://raw.githubusercontent.com/Konata09/VPSScript/master/zsh.zshrc > /root/.zshrc
 chsh -s /bin/zsh
 
-# install speedtest
-mkdir -p /opt/speedtest && cd /opt/speedtest
-wget https://install.speedtest.net/app/cli/ookla-speedtest-1.0.0-x86_64-linux.tgz
-tar -xvf ookla-speedtest-1.0.0-x86_64-linux.tgz
-rm ookla-speedtest-1.0.0-x86_64-linux.tgz
+# install fastfetch
+wget https://github.com/fastfetch-cli/fastfetch/releases/download/2.30.1/fastfetch-linux-amd64.rpm
+rpm -i fastfetch-linux-amd64.rpm
+rm fastfetch-linux-amd64.rpm
 
-# copy neofetch configuration
-mkdir -p /root/.config/neofetch
-curl -fSL https://raw.githubusercontent.com/Konata09/VPSScript/master/neo.conf > /root/.config/neofetch/config.conf
+# install speedtest
+curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.rpm.sh | sudo bash
+yum install speedtest-cli
 
 # install golang
 wget https://golang.org/dl/go1.17.3.linux-amd64.tar.gz
