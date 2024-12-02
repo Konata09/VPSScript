@@ -43,4 +43,4 @@ go build -ldflags "-w -s" -trimpath -o speedtest main.go
 cd /opt && wget https://cdn.ipip.net/17mon/besttrace4linux.zip
 unzip -d besttrace besttrace4linux.zip
 chmod +x besttrace/besttrace
-rm esttrace4linux.zip
+rm besttrace4linux.zip
