@@ -2,7 +2,7 @@
 
 yum update && yum -y install dnf dnf-plugins-core
 dnf -y update
-dnf -y install unzip vim git curl wget net-tools zsh ncurses-devel automake autoconf make gcc iperf3 grc
+dnf -y install openssl crontab sqlite unzip vim git curl wget net-tools zsh ncurses-devel automake autoconf make gcc iperf3 grc lsof htop
 
 # add ssh keys
 mkdir -p ~/.ssh && chmod 700 ~/.ssh
