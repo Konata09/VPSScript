@@ -25,7 +25,7 @@ rm ookla-speedtest-1.0.0-x86_64-linux.tgz
 
 # copy fastfetch configuration
 mkdir -p /root/.config/fastfetch
-curl -fSL https://raw.githubusercontent.com/Konata09/VPSScript/master/fastfetch.jsonc > /root/.config/neofetch/config.jsonc
+curl -fSL https://raw.githubusercontent.com/Konata09/VPSScript/master/fastfetch.jsonc > /root/.config/fastfetch/config.jsonc
 
 # copy neofetch configuration
 # mkdir -p /root/.config/neofetch
